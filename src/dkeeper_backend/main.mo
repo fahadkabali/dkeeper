@@ -1,4 +1,6 @@
 import List "mo:base/List";
+import Debug "mo:base/Debug";
+
 actor DKeeper {
   public type Note = {
     title:Text;
@@ -10,7 +12,8 @@ actor DKeeper {
       title= titleText;
       content= contentText;
     };
-    List.push()
+    notes := List.push(newNote, notes);
+    Debug.print(debug_show(notes));
 
   };
 };
